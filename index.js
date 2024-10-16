@@ -65,27 +65,11 @@ async function sendDiscordNotification(message) {
   }
   require('./function/console');
   require('./function/skyport');
-  
-  async function checkVersion() {
-    try {
-      const response = await axios.get(updateJsonUrl);
-      const latestVersion = response.data.dash_latest;
-      const currentVersion = process.env.VERSION;
-  
-      if (currentVersion && currentVersion === latestVersion) {} else {
-        log.warn(`❌ Your version (v${currentVersion}) is not up to date. Latest version is v${latestVersion}.`);
-      }
-    } catch (error) {
-      log.error(`Failed to check the latest version: ${error.message}`);
-    }
-  }
 
   const currentVersion = process.env.VERSION;
 
   console.log(`${ascii}\n                          version v${currentVersion}\n`);
-  
-  checkVersion().then(() => {
-  });
+
 
   const init = async () => {
 
