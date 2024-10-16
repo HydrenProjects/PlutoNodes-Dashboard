@@ -1,0 +1,16 @@
+{
+    "PLAN": {
+        "BASIC": {
+            "id": 1,
+            "name": "Default",
+            "price": 0,
+            "resources": {
+                "cpu": 75,
+                "ram": 2048,
+                "disk": 3072,
+                "server": 2
+            }
+        }
+      }
+   }
+ 

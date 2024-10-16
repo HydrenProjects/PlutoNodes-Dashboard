@@ -1,0 +1,122 @@
+[
+  {
+    "Image": "quay.io/skyport/java:21",
+    "Cmd": "",
+    "Env": [
+      "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar"
+    ],
+    "Variables": {
+      "Version": {
+        "type": "text",
+        "default": "1.21",
+        "required": false ,
+        "_note": "i have set that false for testing"
+      }
+    },
+    "Scripts": {
+      "Install": [
+        {
+          "Uri": "https://download.getbukkit.org/spigot/spigot-{{Version}}.jar",
+          "Path": "server.jar"
+        },
+        {
+          "Uri": "https://raw.githubusercontent.com/skyportlabs/images_v2/main/spigotmc/server.properties",
+          "Path": "server.properties"
+        }
+      ]
+    },
+    "Name": "Minecraft Java: SpigotMC",
+    "Description": "SpigotMC is a high-performance, open-source server software for Minecraft, designed to enhance and optimize the game's multiplayer experience. It offers extensive configuration options, a vibrant plugin ecosystem, and active community support, making it a popular choice for server administrators seeking to improve gameplay and server performance.",
+    "Author": "info@skyport.dev",
+    "AuthorName": "Skyport Labs",
+    "Meta": {
+      "Version": "Skyport Images v2"
+    },
+    "Id": "c32d036f-9226-44f1-acfd-2e3ad17b4ca5"
+  },
+  {
+    "Image": "quay.io/skyport/java:21",
+    "Cmd": "",
+    "Env": [
+      "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar"
+    ],
+    "Variables": {
+      "Version": {
+        "type": "text",
+        "default": "1.21.1",
+        "required": true
+      },
+      "Build": {
+        "type": "text",
+        "default": "89",
+        "required": true
+      }
+    },
+    "Scripts": {
+      "Install": [
+        {
+          "Uri": "https://api.papermc.io/v2/projects/paper/versions/{{Version}}/builds/{{Build}}/downloads/paper-{{Version}}-{{Build}}.jar",
+          "Path": "server.jar"
+        },
+        {
+          "Uri": "https://raw.githubusercontent.com/skyportlabs/images_v2/main/spigotmc/server.properties",
+          "Path": "server.properties"
+        }
+      ]
+    },
+    "Name": "Minecraft Java: PaperMC",
+    "Description": "PaperMC is an optimized, high-performance fork of SpigotMC for Minecraft servers. It aims to improve performance and stability by offering additional features, enhanced configuration options, and bug fixes. Known for its robust plugin compatibility and active development community, PaperMC is a preferred choice for server administrators looking to enhance their Minecraft multiplayer experience.",
+    "Author": "info@skyport.dev",
+    "AuthorName": "Skyport Labs",
+    "Meta": {
+      "Version": "Skyport Images v2"
+    },
+    "Id": "adeb2512-f2b5-405f-9cbe-b7d25c4edccc"
+  },
+  {
+    "Image": "quay.io/skyport/python:lts",
+    "Cmd": "",
+    "Env": [
+      "START=requirements.txt && python app.py"
+    ],
+    "Scripts": {
+      "Install": [
+        {
+          "Uri": "https://raw.githubusercontent.com/skyportlabs/images_v2/main/python/requirements.txt",
+          "Path": "requirements.txt"
+        }
+      ]
+    },
+    "Name": "Generic: Python",
+    "Description": "Python is a versatile programming language known for its simplicity and readability. It excels in various applications such as web development, data analysis, artificial intelligence, and scientific computing. Python's extensive standard library and third-party packages make it easy to develop powerful and scalable applications quickly. With its clean syntax and strong community support, Python is a popular choice among developers for building everything from web apps to machine learning models.",
+    "Author": "info@skyport.dev",
+    "AuthorName": "Skyport Labs",
+    "Meta": {
+      "Version": "Skyport Images v2"
+    },
+    "Id": "1c631088-61ce-4669-9cbe-dc7fb6b20743"
+  },
+  {
+    "Image": "quay.io/skyport/nodejs:lts",
+    "Cmd": "",
+    "Env": [
+      "START=npm install && npm start"
+    ],
+    "Scripts": {
+      "Install": [
+        {
+          "Uri": "https://raw.githubusercontent.com/skyportlabs/images_v2/main/nodejs/package.json",
+          "Path": "package.json"
+        }
+      ]
+    },
+    "Name": "Generic: Node.js",
+    "Description": "Node.js is a runtime environment that enables JavaScript code to run outside of web browsers, known for its efficiency in building scalable network applications and backend APIs. It utilizes an event-driven, non-blocking I/O model and boasts a vast ecosystem of packages (npm), making it ideal for modern web development across platforms.",
+    "Author": "info@skyport.dev",
+    "AuthorName": "Skyport Labs",
+    "Meta": {
+      "Version": "Skyport Images v2"
+    },
+    "Id": "d75f8fc3-91a1-4f73-b40e-250b931b599a"
+  }
+]

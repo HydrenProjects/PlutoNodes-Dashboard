@@ -1,0 +1,113 @@
+<html class="h-full">
+  <head>
+    <title><%= name %></title>
+    <link rel="stylesheet" href="../public/tailwind.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+  
+    <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <% if (req.query.err == "INTERNALERROR") { %>
+   <div class="rounded-2xl bg-[#162027]/30 shadow border-t border-white/5 p-8 mb-5">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <img src="https://img.icons8.com/?size=48&id=13903&format=png" class="h-7 w-7 mt-2">
+        </div>
+        <div class="ml-5">
+          <h3 class="text-md font-medium tracking-tight text-white">INTERNALERROR</h3>
+          <div class="mt-1 text-sm text-zinc-400">
+            <p>A Error is Coming While Processing to the Dashboard Contact an Admistrator if you thing this is a Error.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+   <% } %> <% if (req.query.err == "BANNED") { %>
+      <div class="rounded-2xl bg-[#162027]/30 shadow border-t border-white/5 p-8 mb-5">
+         <div class="flex">
+           <div class="flex-shrink-0">
+             <img src="https://img.icons8.com/?size=48&id=13903&format=png" class="h-7 w-7 mt-2">
+           </div>
+           <div class="ml-5">
+             <h3 class="text-md font-medium tracking-tight text-white">You are Banned</h3>
+             <div class="mt-1 text-sm text-zinc-400">
+               <p>You are Banned cause of Reason: <%= req.query.reason %>.</p>
+             </div>
+           </div>
+         </div>
+       </div>
+     <% } %>      
+<body class="h-full bg-[#10181e] p-12" style="font-family: 'Space Grotesk'">
+    <div class="" id="content">
+       <section data-section-id="1" data-share="" data-category="sign-up" data-component-id="6c5b97a6_02_awz" class="relative py-5 2xl:py-5 overflow-hidden">
+          <div class="container px-4 mx-auto">
+             <div class="max-w-7xl mx-auto">
+                <div class="flex flex-wrap -mx-4">
+                   <div class="w-full lg:w-1/2 px-4 order-last lg:order-first">
+                      <div class="relative max-w-lg mx-auto lg:mx-0 lg:max-w-2xl h-full">
+                         <img class="block w-full h-142 sm:h-full object-cover rounded-5xl" src="../public/v2LB.png" alt="" data-config-id="auto-img-1-2" style="border-radius: 3rem;">
+                         <div class="absolute bottom-0 w-full left-0 h-full flex items-center justify-center p-10">
+                            <div class="max-w-md mx-auto">
+                               <h4 class="font-heading text-3xl sm:text-5xl lg:text-6xl text-white font-bold mb-8" data-config-id="auto-txt-1-2">Sign in to your <%= name %> account.</h4>
+                               <div class="md:flex mb-20">
+                                  <div>
+                                     <p class="text-lg font-normal text-zinc-400" data-config-id="auto-txt-2-2">Welcome back! Login to your <%= name %> account through one of our OAuth2 providers. If you don't have an account, one will be created.</p>
+                                  </div>
+                               </div>
+                               <div class="flex items-center">
+                                  <div class="flex mr-4 items-center">
+                                  </div>
+                                  <div class="flex items-center mb-5">
+                                    <div class="flex mr-4 items-center">
+                                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                         <path d="M8.53834 0.609964C8.70914 0.199318 9.29086 0.199318 9.46166 0.609964L11.5278 5.57744C11.5998 5.75056 11.7626 5.86885 11.9495 5.88383L17.3123 6.31376C17.7556 6.3493 17.9354 6.90256 17.5976 7.19189L13.5117 10.6919C13.3693 10.8139 13.3071 11.0053 13.3506 11.1876L14.5989 16.4208C14.7021 16.8534 14.2315 17.1954 13.8519 16.9635L9.26063 14.1592C9.10062 14.0615 8.89938 14.0615 8.73937 14.1592L4.14806 16.9635C3.76851 17.1954 3.29788 16.8534 3.40108 16.4208L4.64939 11.1876C4.69289 11.0053 4.6307 10.8139 4.48831 10.6919L0.402413 7.19189C0.0646446 6.90256 0.244408 6.3493 0.687735 6.31376L6.05054 5.88383C6.23744 5.86885 6.40024 5.75056 6.47225 5.57744L8.53834 0.609964Z" fill="#FFBF1A"/>
+                                         </svg>
+                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.53834 0.609964C8.70914 0.199318 9.29086 0.199318 9.46166 0.609964L11.5278 5.57744C11.5998 5.75056 11.7626 5.86885 11.9495 5.88383L17.3123 6.31376C17.7556 6.3493 17.9354 6.90256 17.5976 7.19189L13.5117 10.6919C13.3693 10.8139 13.3071 11.0053 13.3506 11.1876L14.5989 16.4208C14.7021 16.8534 14.2315 17.1954 13.8519 16.9635L9.26063 14.1592C9.10062 14.0615 8.89938 14.0615 8.73937 14.1592L4.14806 16.9635C3.76851 17.1954 3.29788 16.8534 3.40108 16.4208L4.64939 11.1876C4.69289 11.0053 4.6307 10.8139 4.48831 10.6919L0.402413 7.19189C0.0646446 6.90256 0.244408 6.3493 0.687735 6.31376L6.05054 5.88383C6.23744 5.86885 6.40024 5.75056 6.47225 5.57744L8.53834 0.609964Z" fill="#FFBF1A"/>
+                                            </svg>
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                               <path d="M8.53834 0.609964C8.70914 0.199318 9.29086 0.199318 9.46166 0.609964L11.5278 5.57744C11.5998 5.75056 11.7626 5.86885 11.9495 5.88383L17.3123 6.31376C17.7556 6.3493 17.9354 6.90256 17.5976 7.19189L13.5117 10.6919C13.3693 10.8139 13.3071 11.0053 13.3506 11.1876L14.5989 16.4208C14.7021 16.8534 14.2315 17.1954 13.8519 16.9635L9.26063 14.1592C9.10062 14.0615 8.89938 14.0615 8.73937 14.1592L4.14806 16.9635C3.76851 17.1954 3.29788 16.8534 3.40108 16.4208L4.64939 11.1876C4.69289 11.0053 4.6307 10.8139 4.48831 10.6919L0.402413 7.19189C0.0646446 6.90256 0.244408 6.3493 0.687735 6.31376L6.05054 5.88383C6.23744 5.86885 6.40024 5.75056 6.47225 5.57744L8.53834 0.609964Z" fill="#FFBF1A"/>
+                                               </svg>
+                                               <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M8.53834 0.609964C8.70914 0.199318 9.29086 0.199318 9.46166 0.609964L11.5278 5.57744C11.5998 5.75056 11.7626 5.86885 11.9495 5.88383L17.3123 6.31376C17.7556 6.3493 17.9354 6.90256 17.5976 7.19189L13.5117 10.6919C13.3693 10.8139 13.3071 11.0053 13.3506 11.1876L14.5989 16.4208C14.7021 16.8534 14.2315 17.1954 13.8519 16.9635L9.26063 14.1592C9.10062 14.0615 8.89938 14.0615 8.73937 14.1592L4.14806 16.9635C3.76851 17.1954 3.29788 16.8534 3.40108 16.4208L4.64939 11.1876C4.69289 11.0053 4.6307 10.8139 4.48831 10.6919L0.402413 7.19189C0.0646446 6.90256 0.244408 6.3493 0.687735 6.31376L6.05054 5.88383C6.23744 5.86885 6.40024 5.75056 6.47225 5.57744L8.53834 0.609964Z" fill="#FFBF1A"/>
+                                                  </svg>
+                                                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M8.53834 0.609964C8.70914 0.199318 9.29086 0.199318 9.46166 0.609964L11.5278 5.57744C11.5998 5.75056 11.7626 5.86885 11.9495 5.88383L17.3123 6.31376C17.7556 6.3493 17.9354 6.90256 17.5976 7.19189L13.5117 10.6919C13.3693 10.8139 13.3071 11.0053 13.3506 11.1876L14.5989 16.4208C14.7021 16.8534 14.2315 17.1954 13.8519 16.9635L9.26063 14.1592C9.10062 14.0615 8.89938 14.0615 8.73937 14.1592L4.14806 16.9635C3.76851 17.1954 3.29788 16.8534 3.40108 16.4208L4.64939 11.1876C4.69289 11.0053 4.6307 10.8139 4.48831 10.6919L0.402413 7.19189C0.0646446 6.90256 0.244408 6.3493 0.687735 6.31376L6.05054 5.88383C6.23744 5.86885 6.40024 5.75056 6.47225 5.57744L8.53834 0.609964Z" fill="#FFBF1A"/>
+                                                   </svg>
+                                                                                                                                                                       
+                                    </div>
+                                    <span class="text-sm font-semibold text-white">5+ Stars on TrustPilot</span>
+                                 </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   
+                   <div class="w-full lg:w-1/2 px-4 mb-16 lg:mb-0 border border-white/5" style="border-radius: 3rem;">
+                      <div class="max-w-lg lg:pt-32 2xl:pt-64 lg:pb-8 mx-auto 2xl:mr-0">
+                         <h3 class="text-4xl sm:text-3xl text-white font-medium tracking-tight mb-3" data-config-id="auto-txt-6-2">Continue to dashboard</h3>
+                         <p class="text-md text-zinc-400 mb-15" data-config-id="auto-txt-7-2">Select an OAuth2 provider to continue with.</p>
+                         <form class="mt-12">
+                            <a href="../login/discord" class="relative group block w-96 mb-32 py-3 px-5 text-center text-sm font-semibold text-white bg-<%= theme.buttoncolor %> rounded-2xl overflow-hidden" type="submit">
+                               <div class="absolute top-0 right-full w-full h-full bg-<%= theme.buttoncolor %> transform group-hover:translate-x-full group-hover:scale-102 transition duration-150"></div>
+                               <span class="relative" data-config-id="auto-txt-15-2">Sign in using Discord</span>
+                            </a>
+                            
+                            <div>
+                               <span class="text-xs font-semibold text-white">
+                               <span data-config-id="auto-txt-16-2">Need help?</span>
+                               <a href="<%= discordserver %>" class="inline-block ml-1 text-<%= theme.somecolors %> transition" data-config-id="auto-txt-17-2"><%= name %> Discord Server</a>
+                               </span>
+                            </div>
+                         </form>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </section>
+    </div>
+ </body>
