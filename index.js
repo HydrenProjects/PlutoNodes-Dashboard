@@ -181,7 +181,7 @@ async function sendDiscordNotification(message) {
   const port = process.env.APP_PORT || 3000;
   app.listen(port, async () => {
     const appUrl = process.env.APP_URL || `http://localhost:${port}`;
-    log.info(`Hydren is listening on port ${port}!`);
+    log.info(`PlutoNodes Dashboard is listening on port ${port}!`);
   await sendDiscordNotification(`✅ ${process.env.APP_NAME} is Booting Up.`);
 });
 }; 
